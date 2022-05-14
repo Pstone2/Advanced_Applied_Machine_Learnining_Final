@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Final_Paper</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="using-genetic-algorithems-to-make-birds-play-flappy-bird">Using Genetic Algorithems to Make Birds play Flappy Bird</h1>
+<h2 id="the-background">The background</h2>
+<p>Throughout high school and college, I have always been fascinated by the idea of teaching AI to do something, even if it was a seemingly simple task. When I was given the opportunity to pick a machine learning project of my choosing, I jumped at the opportunity to try out my ideas.</p>
+<h3 id="starting-big">Starting Big</h3>
+<p>Originally, I had seen a python library called MineRL that was focused on teaching a machine in Minecraft how to do basic tasks such as getting wood. I was very excited to try my hand at making the computer learn to play Minecraft. Unfortunately, the time the code took to run as well as the complexity of coding machine learning in a three-dimensional environment that was initially coded in Java, made the project very slow to run as well as time-consuming. In the many hours I spent looking online for resources on genetic algorithms, I came across a video on making an AI play the well-known game Flappy Bird. I still had hours to go on my current iteration of the Minecraft project, so I figured I would try to make the Flappy Bird AI while the code was running. After all, I was not doing much else, and there seemed to be a ton of resources online for anyone having trouble making the AI.</p>
+<h2 id="taking-flight">Taking Flight</h2>
+<p>I began by recreating the base game of Flappy Bird, and while I had never imagined that the game was overly complex, I certainly did not think the game was going to be quite as easy to code from scratch as it ended up being. Thanks to the myriad of resources online, anytime I was stuck, there was always someone who had run into the same issue as me. Once I had the game coded, creating the AI was the most difficult part. Retrofitting the AI into the game code was made simpler, thanks in no small part to the many available videos on the subject, but it was still a large undertaking. My Flappy Bird game broke over and over again, constantly giving me nothing but a black screen when I ran it. Luckily, I figured out that the issue was an accidental line indentation that was causing nothing to load.</p>
+<h2 id="neat">Neat</h2>
+<p>The genetic algorithm I chose to use for the project was NEAT. I had seen many videos of people using NEAT to play many different games, including Flappy Brid, so I knew it would work well. Specifically, I used the <strong>NEAT-Python</strong> library.</p>
+<h3 id="neats-background">Neat’s Background</h3>
+<p>Neat was originally created by Ken Stanley during his time at the University of Texas. NEAT stands for the <strong>NeuroEvolution of Augmenting Topologies</strong> and is a great way to train a machine to do a task so long as there is a quantifiable goal for the be trained on.</p>
+<h3 id="ideas-behind-neat-and-genetic-algorithms">Ideas Behind NEAT and Genetic Algorithms</h3>
+<p>The idea behind Genetic Algorithms and NEAT is rooted in the evolution of real-world animals. Charles Darwin’s theory of evolution tells us that over time animals will evolve based on selective pressures as only the most fit individuals will reproduce. Luckily for us, when we do this on a computer, we do not have to wait very long, and we have the ability to force the extinction of any versions that do not meet our fitness standards instantly.</p>
+<h3 id="what-makes-neat-special">What makes NEAT special</h3>
+<p>The part of NEAT that makes it so useful for training the birds is that it seeks to maintain a level of diversity amongst the population, even if it means preserving some individuals who are more unfit than others. Each generation, NEAT will take all of the different models and cross them with each other. Just like in the real world, this helps to preserve innovation and keep the modules from not being able to adapt to anything. Genetic algorithms that do not preserve more unfit generations will end up becoming very hyperfocused on whatever the first innovation amongst the population is. This is clearly bad as it can result in the machine coming to a non-optimal solution because it found a pretty good one. This is not to say that NEAT does not cut any unfit models, as the video below will show NEAT results in a population trend toward the best solution while ensuring the model is able to try different things as it goes along.<br>
+<img src="https://blog.otoro.net/assets/20160507/neat_representation.png" alt="Image of how NEAT works"></p>
+<p>The image above shows one Genome in NEAT and how that genome is applied to the network. More information on the specifics can be found at <a href="http://nn.cs.utexas.edu/downloads/papers/stanley.cec02.pdf">mycec-expand3.dvi (utexas.edu)</a></p>
+<h2 id="results">Results</h2>
+<p>The video below shows how my Flappy Bird AI turned out. Typically, the AI is able to fly forever after around 3-5 generations. To combat this, I did something I had not seen anyone do; I made the game get faster each time the birds passed a pipe. Below are the first 30 generations of Birds. Viewers should see how over time, all of the birds get better at flying, but some of them still deviate from the pack occasionally.<br>
+<a href="https://www.youtube.com/watch?v=qYgIG0osQR4">Youtube:Flappy_Bird</a></p>
+<h3 id="bugs">Bugs</h3>
+<p>Viewers should see the speed of the game does not reset unit the next generation passes the first pipe. At first, I was going to fix this, but I noticed the birds were learning to adapt to the fast speed at the beginning of the game. It is really interesting and speaks to the strength of NEAT for them to have all learned to fly upwards at the beginning as fast as possible.</p>
+<h2 id="brief-minecraft-section">Brief Minecraft Section</h2>
+<p>Below is a brief video of the Minecraft AI mining wood and digging down for stone. This is as far as I was able to get with the AI, as teaching it to find iron and get stone proved to be too much to achieve in the time I had left. I look forward to improving the AI over the summer.</p>
+<p><a href="https://youtube.com/shorts/p5His41x4cA?feature=share">MineRL AI</a></p>
+<p>From my limited understanding of the very complex Minecraft AI, it utilizes K-means to analyze player videos as a way to train the network. I was not able to implement NEAT in the MineRL environment as it does not seem to be compatible with the library.</p>
+</div>
+</body>
+
+</html>
